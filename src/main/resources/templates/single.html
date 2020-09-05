@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Single</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+<div class="container my-2" style="max-width:1187px;">
+		<h1 style="margin-bottom: 30px;">Single page</h1>
+		<table border="1" class="table table-striped table-responsive-md" th:action="@{/showSinglePage}"
+			th:object="${employee}" method="POST">
+			<thead>
+				<tr>
+					<th>
+						ID
+					</th>
+					<th>
+						First Name
+					</th>
+					<th>
+						Last Name
+					</th>
+					<th>
+						Nationality
+					</th>
+					<th>
+						Place Of Birthday
+					</th>
+					<th>
+						Date of Birthday
+					</th>
+					<th>
+						Gender
+					</th>
+					<th>
+						Date of Expiry
+					</th>
+					<th>
+						Date of Issue
+					</th>
+					<th>
+						Issued By
+					</th>
+					<th>
+						Residence
+					</th>
+					<th>
+						Action
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr th:each="employee : ${listEmployees}"> -->
+				<td th:text="${employee.id}"></td>
+				<td th:text="${employee.firstName}"></td>
+				<td th:text="${employee.lastName}"></td>
+				<td th:text="${employee.nationality}"></td>
+				<td th:text="${employee.placeOfBirthday}"></td>
+				<td th:text="${employee.dateOfBirthday}"></td>
+				<td th:text="${employee.gender}"></td>
+				<td th:text="${employee.dateOfExpiry}"></td>
+				<td th:text="${employee.dateOfissue}"></td>
+				<td th:text="${employee.issuedBy}"></td>
+				<td th:text="${employee.residence}"></td>
+				<td><a class="btn btn-primary" href="#" role="button">Generate (PDF)</a></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<a th:href="@{/}"> Back</a>
+	</div>
+</body>
+</html>
